@@ -26,22 +26,20 @@ private PersonMapper personMapper;
 
 private static Logger logger = Logger.getLogger(PersonServiceImpl.class); 
 
-   
-    public String testRegister(Person person){
+   @Transactional(rollbackFor=Exception.class)
+    public void testRegister(Person person) throws Exception{
     	boolean flag=person.isFlag();
-    	
     	//插入数据
-		if(this.personMapper.insert(person) == -1){
-			return Canstants.regFail;
-		}else{
-			return Canstants.regSuccess;
-		}
-		//test(flag);
+		this.personMapper.insert(person);
+		//外部方法   
+		test(flag);
+		
+		
     }
-    @Transactional(rollbackFor=Exception.class)
+   // @Transactional(rollbackFor=Exception.class)
     public  void test(boolean flag) throws Exception{
 	   if(flag)
-		   throw new Exception("参数true抛异常");
+	   throw new Exception("参数true抛异常");
 	   System.out.println("we");
    }
 

@@ -11,6 +11,7 @@ public interface IPersonService {
 	public String loginPerson(Person person,HttpSession httpSession);
 
 	public boolean activatEmail(Person person);
+	public void testRegister(Person person)throws Exception;
 
 	
 }
