@@ -29,7 +29,7 @@ public class TestMyBatis  {
    @Autowired  
    private IPersonService personService;
   //junit4的测试类中打事务注解@Transactional，默认会按照@Rollback(true)来进行处理，无论如何都会回滚
-   //TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+  //TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
    @Test 
    public void test1()  { 
 	    Person person = new Person();	

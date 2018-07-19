@@ -26,7 +26,7 @@ private PersonMapper personMapper;
 
 private static Logger logger = Logger.getLogger(PersonServiceImpl.class); 
 
-   @Transactional(rollbackFor=Exception.class)
+ 
     public void testRegister(Person person) throws Exception{
     	boolean flag=person.isFlag();
     	//插入数据
