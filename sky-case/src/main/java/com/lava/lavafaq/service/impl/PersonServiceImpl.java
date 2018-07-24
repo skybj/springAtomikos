@@ -30,13 +30,10 @@ private static Logger logger = Logger.getLogger(PersonServiceImpl.class);
     public void testRegister(Person person) throws Exception{
     	boolean flag=person.isFlag();
     	//插入数据
-		this.personMapper.insert(person);
+		int result= this.personMapper.insert(person);
 		//外部方法   
-		test(flag);
-		
-		
+		test(flag);	
     }
-   // @Transactional(rollbackFor=Exception.class)
     public  void test(boolean flag) throws Exception{
 	   if(flag)
 	   throw new Exception("参数true抛异常");
@@ -96,6 +93,7 @@ private static Logger logger = Logger.getLogger(PersonServiceImpl.class);
 		//登录成功存储Session	 		
 		httpSession.setAttribute("account", personEnty.getMail()); 
 		httpSession.setAttribute("username", personEnty.getUsername());
+		httpSession.setAttribute("uname", personEnty.getUsername());
 		return Canstants.loginSuccess;
 	}
 	

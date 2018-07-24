@@ -62,7 +62,7 @@ $(document).ready(function() {
 
     //注册
 	$('#reg').click(function() {
-		alert("aa");
+		
 		if ($('#user').val() == "") {
 			$('#user').focus().css({
 				border: "1px solid red",
@@ -117,14 +117,12 @@ $(document).ready(function() {
 					mail: $('#qq').val()
 		    }
 		$("#loading").show();
-		alert("开始");
 		$.ajax({
 			type: reMethod,
 			url: "/lavaFAQ/login/register",
 			data: sendData,
 			dataType: "json",
-			success: function(result) {		
-				alert(result)
+			success: function(result) {				
 				if (result.success) {
 					/*$('#user').focus().css({
 						border: "1px solid green",

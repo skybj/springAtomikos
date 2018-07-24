@@ -3,6 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@ page import="java.util.*"%>  
 
 <!DOCTYPE html>
 <html>
@@ -80,7 +81,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </script>
 <!-- editormd end -->
 
-</head>
+</head>  
+    
+<h2>在线人员</h2>   
+<hr>   
 
 <body onload="init()">
 

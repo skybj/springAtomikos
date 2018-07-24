@@ -2,11 +2,9 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
-     
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
+%>    
+<!DOCTYPE html>
+<html>
 <title>Lava FAQ</title> 
 <meta name="keywords" content="Lava FAQ" />
 <meta name="description" content="Lava FAQ" />
@@ -15,8 +13,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="<%=path%>/script/login/login.js"></script>
 <link href="<%=path%>/css/login2.css" rel="stylesheet" type="text/css" />
 <link href="<%=path%>/css/loading.css" rel="stylesheet" type="text/css" />
-
-
 </head>
 <body>
 <h1>Lava FAQ<sup>V2017</sup></h1>

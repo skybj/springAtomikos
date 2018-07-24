@@ -33,6 +33,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             response.sendRedirect(getLoginUrl(request,"/login/loginHtml"));
             return false;
         }
+        
         return true;
 		
 	}

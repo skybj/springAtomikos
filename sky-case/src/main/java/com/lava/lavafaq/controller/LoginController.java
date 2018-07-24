@@ -1,9 +1,12 @@
 package com.lava.lavafaq.controller;
 
+import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lava.lavafaq.bean.Person;
 import com.lava.lavafaq.canstants.Canstants;
+import com.lava.lavafaq.listenter.HttpSessionListenerImpl;
 import com.lava.lavafaq.service.IPersonService;
 import com.lava.lavafaq.utils.ResponseUtils;
 
@@ -35,6 +39,25 @@ public class LoginController {
 	   person.setState(0);
 	   return ResponseUtils.sendSuccess(this.personService.registerPerson(person));		 
 	}
+	//查询在线人数
+    @RequestMapping("/testcount")
+    @ResponseBody
+	private void testcount(HttpServletResponse res) throws IOException{	   
+    	
+      res.getWriter().write("list:"+HttpSessionListenerImpl.getCount());
+	}
+    @RequestMapping("/quit")
+    @ResponseBody
+    /**
+    	 * 用户退出的方法
+    	 */
+    public String quit(HttpServletRequest request){
+    		// 销毁session
+    	  request.getSession().invalidate();
+    		return "quit";
+    }
+
+	
 	
 	//邮件激活
 	@RequestMapping("/activatemail")
@@ -63,6 +86,7 @@ public class LoginController {
 			
 			 return "faqEdit";	
 		}
+		logger.debug("进入登录请求后======="+result);
 		 modelMap.addAttribute("result",result);		
 	   return "redirect:/login/loginHtml";	 
 	}

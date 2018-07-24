@@ -115,6 +115,7 @@
     select 
     <include refid="Base_Column_List" />
     from person
-    where password = #{password,jdbcType=VARCHAR} and mail = #{mail,jdbcType=VARCHAR}
+    where password = #{password,jdbcType=VARCHAR} 
+  <!--   and mail = #{mail,jdbcType=VARCHAR} -->
   </select>
 </mapper>
