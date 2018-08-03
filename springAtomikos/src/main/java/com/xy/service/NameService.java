@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Created by helloworld on 2015/1/30.
+ * Created by 
  */
 @Service
 public class NameService {
